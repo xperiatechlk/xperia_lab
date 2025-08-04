@@ -20,9 +20,14 @@ interface Props {
 
 const ProductDetailsDialog: React.FC<Props> = ({ open, item, onClose }) => {
   const theme = useTheme();
-  const isLargeScreen = useMediaQuery(theme.breakpoints.up('md')); // md and up = large screen
+  const isLargeScreen = useMediaQuery(theme.breakpoints.up('md'));
 
   if (!item) return null;
+
+  const hasDiscount = item.discount && item.discount > 0;
+  const finalPrice = hasDiscount
+    ? item.price - (item.price * item.discount) / 100
+    : item.price;
 
   return (
     <Dialog open={open} onClose={onClose} maxWidth="md" fullWidth>
@@ -53,9 +58,33 @@ const ProductDetailsDialog: React.FC<Props> = ({ open, item, onClose }) => {
             <Typography variant="body1" gutterBottom>
               {item.description}
             </Typography>
-            <Typography variant="body2" color="text.secondary">
+            <Typography variant="body2" color="text.secondary" gutterBottom>
               Category: {item.category} &nbsp; | &nbsp; Subcategory: {item.subcategory}
             </Typography>
+
+            <Box sx={{ mt: 2 }}>
+              <Typography variant="subtitle1" fontWeight="bold">
+                Price:
+              </Typography>
+
+              {hasDiscount ? (
+                <Box>
+                  <Typography
+                    variant="body1"
+                    sx={{ textDecoration: 'line-through', color: 'text.secondary' }}
+                  >
+                    Rs. {item.price.toLocaleString()}
+                  </Typography>
+                  <Typography variant="h6" color="error" fontWeight="bold">
+                    Rs. {finalPrice.toLocaleString()} (-{item.discount}%)
+                  </Typography>
+                </Box>
+              ) : (
+                <Typography variant="h6">
+                  Rs. {item.price.toLocaleString()}
+                </Typography>
+              )}
+            </Box>
           </Box>
         </Box>
       </DialogContent>
