@@ -1,4 +1,3 @@
-// src/components/ContactCard.tsx
 import React from 'react';
 import {
   Paper,
@@ -12,6 +11,32 @@ import PhoneIcon from '@mui/icons-material/Phone';
 import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import FacebookIcon from '@mui/icons-material/Facebook';
+
+const contactInfo = [
+  {
+    label: 'Phone',
+    value: '+1 (555) 123-4567',
+    icon: <PhoneIcon sx={{ fontSize: 20, color: 'primary.main', animation: 'bounce 3s infinite' }} />,
+  },
+  {
+    label: 'Support',
+    value: '+1 (555) 987-6543',
+    icon: <SupportAgentIcon sx={{ fontSize: 20, color: 'primary.main', animation: 'bounce 3s infinite', animationDelay: '0.3s' }} />,
+  },
+];
+
+const socialLinks = [
+  {
+    label: 'Twitter',
+    href: 'https://twitter.com/xperiatech',
+    icon: <TwitterIcon sx={{ fontSize: 20 }} />,
+  },
+  {
+    label: 'Facebook',
+    href: 'https://facebook.com/xperiatech',
+    icon: <FacebookIcon sx={{ fontSize: 20 }} />,
+  },
+];
 
 const ContactCard: React.FC = () => {
   const theme = useTheme();
@@ -37,7 +62,7 @@ const ContactCard: React.FC = () => {
         },
       }}
     >
-      {/* Background */}
+      {/* Background Image */}
       <Box
         sx={{
           position: 'absolute',
@@ -45,7 +70,7 @@ const ContactCard: React.FC = () => {
           right: 0,
           bottom: 0,
           left: 0,
-          backgroundImage: 'url(/images/card-bg2.jpg)', // Replace as needed
+          backgroundImage: 'url(/images/card-bg2.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           opacity: 0.08,
@@ -58,62 +83,41 @@ const ContactCard: React.FC = () => {
           Contact Us
         </Typography>
 
-        <Stack direction="row" alignItems="center" spacing={1} mb={2}>
-          <PhoneIcon sx={{ fontSize: 20, color: 'primary.main', animation: 'bounce 3s infinite' }} />
-          <Typography fontSize="1rem" fontWeight={500}>
-            Phone: <strong>+1 (555) 123-4567</strong>
-          </Typography>
-        </Stack>
+        {/* Contact Info */}
+        {contactInfo.map((info, index) => (
+          <Stack key={index} direction="row" alignItems="center" spacing={1} mb={2}>
+            {info.icon}
+            <Typography fontSize="1rem" fontWeight={500}>
+              {info.label}: <strong>{info.value}</strong>
+            </Typography>
+          </Stack>
+        ))}
 
-        <Stack direction="row" alignItems="center" spacing={1} mb={2}>
-          <SupportAgentIcon
-            sx={{ fontSize: 20, color: 'primary.main', animation: 'bounce 3s infinite', animationDelay: '0.3s' }}
-          />
-          <Typography fontSize="1rem" fontWeight={500}>
-            Support: <strong>+1 (555) 987-6543</strong>
-          </Typography>
-        </Stack>
-
+        {/* Social Links */}
         <Stack direction="row" alignItems="center" spacing={1} sx={{ flexWrap: 'wrap', gap: 1 }}>
           <Typography fontSize="1rem" fontWeight={500}>
             Social:
           </Typography>
-
-          <Link
-            href="https://twitter.com/xperiatech"
-            target="_blank"
-            rel="noopener"
-            sx={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: 0.5,
-              fontSize: '0.95rem',
-              fontWeight: 500,
-              color: theme.palette.primary.main,
-              '&:hover': { color: theme.palette.primary.dark },
-              transition: 'color 0.3s ease',
-            }}
-          >
-            <TwitterIcon sx={{ fontSize: 20 }} /> Twitter
-          </Link>
-
-          <Link
-            href="https://facebook.com/xperiatech"
-            target="_blank"
-            rel="noopener"
-            sx={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: 0.5,
-              fontSize: '0.95rem',
-              fontWeight: 500,
-              color: theme.palette.primary.main,
-              '&:hover': { color: theme.palette.primary.dark },
-              transition: 'color 0.3s ease',
-            }}
-          >
-            <FacebookIcon sx={{ fontSize: 20 }} /> Facebook
-          </Link>
+          {socialLinks.map((social, index) => (
+            <Link
+              key={index}
+              href={social.href}
+              target="_blank"
+              rel="noopener"
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: 0.5,
+                fontSize: '0.95rem',
+                fontWeight: 500,
+                color: theme.palette.primary.main,
+                '&:hover': { color: theme.palette.primary.dark },
+                transition: 'color 0.3s ease',
+              }}
+            >
+              {social.icon} {social.label}
+            </Link>
+          ))}
         </Stack>
       </Box>
 
