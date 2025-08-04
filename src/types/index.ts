@@ -7,5 +7,7 @@ export interface CatalogItemType {
     imageUrl: string;
     category: string;
     subcategory: string;
+    price: number;
+    discount?: number;
   }
   

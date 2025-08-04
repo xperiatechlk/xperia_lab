@@ -8,6 +8,8 @@ export const allItems: CatalogItemType[] = [
     imageUrl: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-13-pink-select-2021?wid=470&hei=556&fmt=png-alpha&.v=1645572315986',
     category: 'Mobile Phones',
     subcategory: 'Apple',
+    price: 999,
+    discount: 10,
   },
   {
     id: 2,
@@ -16,6 +18,8 @@ export const allItems: CatalogItemType[] = [
     imageUrl: 'https://images.samsung.com/is/image/samsung/p6pim/in/sm-g991bzvdinu/gallery/in-galaxy-s21-5g-g991-sm-g991bzvdinu-368594148?$720_576_PNG$',
     category: 'Mobile Phones',
     subcategory: 'Samsung',
+    price: 799,
+    discount: 15,
   },
   {
     id: 3,
@@ -24,6 +28,7 @@ export const allItems: CatalogItemType[] = [
     imageUrl: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp16touch-silver-select-202110_GEO_IN?wid=904&hei=840&fmt=jpeg&qlt=80&.v=1632788573000',
     category: 'Laptops',
     subcategory: 'Apple',
+    price: 2499,
   },
   {
     id: 4,
@@ -32,6 +37,8 @@ export const allItems: CatalogItemType[] = [
     imageUrl: 'https://www.lenovo.com/medias/lenovo-laptop-thinkpad-x1-carbon-gen-9-hero.png?context=bWFzdGVyfHJvb3R8Mjk0NzQyfGltYWdlL3BuZ3xoNjIvaGY3Lzk5NjI1MjY2Mjc3NzYucG5nfDMzMjQ0Y2QwNjE0ODQxYjJkNGE3NTc5OGIyNTgwOGQwMTYxYzNmNDI1NzQ2NzY3YmM5YmM3ZmIxNDA0ODcwZjQ',
     category: 'Laptops',
     subcategory: 'Lenovo',
+    price: 1799,
+    discount: 12,
   },
   {
     id: 5,
@@ -40,6 +47,7 @@ export const allItems: CatalogItemType[] = [
     imageUrl: 'https://i.dell.com/sites/imagecontent/products/PublishingImages/xps-13-9310-laptop/spi/ng/xps-13-9310-laptop-campaign-hero-504x350-ng.psd',
     category: 'Laptops',
     subcategory: 'Dell',
+    price: 1399,
   },
   {
     id: 6,
@@ -48,6 +56,8 @@ export const allItems: CatalogItemType[] = [
     imageUrl: 'https://resource.logitech.com/content/dam/logitech/en/products/mice/mx-master-3/gallery/mx-master-3-top-view.png',
     category: 'Accessories',
     subcategory: 'Logitech',
+    price: 99,
+    discount: 5,
   },
   {
     id: 7,
@@ -56,6 +66,7 @@ export const allItems: CatalogItemType[] = [
     imageUrl: 'https://i.dell.com/sites/imagecontent/products/PublishingImages/ultrasharp-u2723qe-monitor/ultrasharp-u2723qe-product-image.png',
     category: 'Accessories',
     subcategory: 'Dell',
+    price: 499,
   },
   {
     id: 8,
@@ -64,6 +75,8 @@ export const allItems: CatalogItemType[] = [
     imageUrl: 'https://cdn.dxomark.com/wp-content/uploads/medias/post-83125/sony-xperia-1-iii-featured-image-packshot-review-1500x1000.jpg',
     category: 'Mobile Phones',
     subcategory: 'Sony',
+    price: 1099,
+    discount: 7,
   },
   {
     id: 9,
@@ -72,6 +85,7 @@ export const allItems: CatalogItemType[] = [
     imageUrl: 'https://ssl-product-images.www8-hp.com/digmedialib/prodimg/lowres/c06621107.png',
     category: 'Accessories',
     subcategory: 'HP',
+    price: 49,
   },
   {
     id: 10,
@@ -80,5 +94,36 @@ export const allItems: CatalogItemType[] = [
     imageUrl: 'https://images.samsung.com/is/image/samsung/p6pim/levant/np930xbbeinu/gallery/levant-galaxy-book-pro-360-np930xbbeinu-368551473?$720_576_PNG$',
     category: 'Laptops',
     subcategory: 'Samsung',
+    price: 1249,
+    discount: 8,
+  },
+  {
+    id: 11,
+    title: 'iPad Pro 11"',
+    description: 'Apple iPad Pro with M2 chip',
+    imageUrl: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-pro-11-select-cell-spacegray-202210_GEO_IN?wid=470&hei=556&fmt=png-alpha&.v=1664411208521',
+    category: 'Tablets',
+    subcategory: 'Apple',
+    price: 999,
+  },
+  {
+    id: 12,
+    title: 'Sony WH-1000XM5',
+    description: 'Noise Cancelling Wireless Headphones',
+    imageUrl: 'https://cdn.sony.co.uk/image/WH1000XM5B_EU1.png',
+    category: 'Accessories',
+    subcategory: 'Sony',
+    price: 399,
+    discount: 10,
+  },
+  {
+    id: 13,
+    title: 'Samsung Galaxy Tab S9',
+    description: 'Samsung premium Android tablet',
+    imageUrl: 'https://images.samsung.com/is/image/samsung/p6pim/levant/galaxy-tab-s9/gallery/levant-galaxy-tab-s9-wifi-sm-x710nzaemea-536244187?$720_576_PNG$',
+    category: 'Tablets',
+    subcategory: 'Samsung',
+    price: 849,
+    discount: 15,
   },
 ];
